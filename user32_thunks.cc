@@ -3,7 +3,7 @@
 
 //////////////////////////////////////////////////////////////////////////
 #define APPLY_TO_LATE_BOUND_MODULES(APPLY)                                               \
-        APPLY(advapi32,                      "advapi32"                                )
+        APPLY(user32,                      "user32"                                     )
         
 #define APPLY_TO_LATE_BOUND_FUNCTIONS(APPLY)                                              \
         APPLY(MessageBoxW,                 ({ user32                                  }))
@@ -27,5 +27,5 @@ MessageBoxW(
     return MB_OK;
 }
 
-_USER32_THUNKS_IAT_SYMBOL(MessageBoxW, _16)
+_USER32_THUNKS_IAT_SYMBOL(MessageBoxW, _16);
 }
